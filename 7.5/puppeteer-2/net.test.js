@@ -20,9 +20,8 @@ afterEach(async () => {
 
 describe("Netology.ru tests", () => {
   test("First test: Booking a movie ticket", async () => {
-   
-    await clickElement(page, ".page-nav > a:nth-child(5)");
-    await clickElement(page, "a[data-seance-start='780']");
+    await clickElement(page, "a[data-time-stamp='1720731600']");
+    await clickElement(page, "a[data-seance-id='218']");
     waitForPageLoaded;
 
     const chosenMovieName = await getText(page, "h2.buying__info-title");
@@ -30,8 +29,8 @@ describe("Netology.ru tests", () => {
   }, 500000);
 
   test("Second test: Selecting a seat and booking", async () => {
-    await clickElement(page, ".page-nav > a:nth-child(5)");
-    await clickElement(page, "a[data-seance-start='780']");
+    await clickElement(page, "a[data-time-stamp='1720731600']");
+    await clickElement(page, "a[data-seance-id='218']");
     waitForPageLoaded;
     await clickElement(
       page,
@@ -47,8 +46,8 @@ describe("Netology.ru tests", () => {
   }, 70000);
 
   test("Third test: Checking seat availability", async () => {
-    await clickElement(page, ".page-nav > a:nth-child(5)");
-    await clickElement(page, "a[data-seance-start='780']");
+    await clickElement(page, "a[data-time-stamp='1720731600']");
+    await clickElement(page, "a[data-seance-id='218']");
     waitForPageLoaded;
 
     await clickElement(
